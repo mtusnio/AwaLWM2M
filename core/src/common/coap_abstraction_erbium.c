@@ -313,7 +313,7 @@ bool coap_ResolveAddressByURI(unsigned char * address, AddressType * addr)
     if (networkAddress)
     {
         NetworkAddress_SetAddressType(networkAddress, addr);
-        NetworkAddress_Free(&networkAddress);
+        //NetworkAddress_Free(&networkAddress);
         result = true;
     }
     return result;
