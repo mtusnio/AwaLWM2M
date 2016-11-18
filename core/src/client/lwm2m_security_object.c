@@ -501,6 +501,19 @@ static LWM2MSecurityInfo * GetSecurityInfoForAddress(Lwm2mContextType * context,
 bool Lwm2mCore_ServerIsBootstrap(Lwm2mContextType * context, AddressType * address)
 {
     bool result = false;
+
+    struct ListHead * current;
+    ListForEach(current, Lwm2mCore_GetSecurityObjectList(context))
+    {
+        LWM2MSecurityInfo * securityInfo = ListEntry(current, LWM2MSecurityInfo, list);
+        Lwm2m_Debug("Address found: %s, is bootstrap: %i\n", Lwm2mCore_DebugPrintAddress(&securityInfo->address),
+        securityInfo->IsBootstrapServer);
+        if(securityInfo->AddressResolved == 0)
+        {
+            securityInfo->AddressResolved = coap_ResolveAddressByURI(securityInfo->ServerURI, &securityInfo->addre$
+        }
+    }
+
     LWM2MSecurityInfo * security = GetSecurityInfoForAddress(context, address);
     if (security == NULL)
     {
