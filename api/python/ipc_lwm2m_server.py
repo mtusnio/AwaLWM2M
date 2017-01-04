@@ -257,3 +257,6 @@ class ObserveNotification(IpcNotification):
 ## Update Notification
 # TODO
 
+## EstablishNotify
+class EstablishNotify(ipc_core.IpcRequest):
+    MessageType = "EstablishNotify"

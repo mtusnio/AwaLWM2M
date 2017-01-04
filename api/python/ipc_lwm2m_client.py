@@ -103,3 +103,6 @@ class ExecuteNotification(IpcNotification):
 class ChangeNotification(IpcNotification):
     MessageType = "ChangeNotification"
 
+## EstablishNotify
+class EstablishNotify(ipc_core.IpcRequest):
+    MessageType = "EstablishNotify"
