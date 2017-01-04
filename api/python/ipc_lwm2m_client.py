@@ -24,7 +24,7 @@
 LWM2M Client IPC Interface
 """
 
-from lxml import etree
+import xml.etree.ElementTree as ElementTree
 from ipc_core import IpcRequest, IpcResponse, IpcNotification
 
 
