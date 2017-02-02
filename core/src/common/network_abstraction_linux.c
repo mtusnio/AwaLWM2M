@@ -82,7 +82,7 @@ typedef enum
 #define MAX_URI_LENGTH  (256)
 
 #ifndef MAX_NETWORK_ADDRESS_CACHE
-    #define MAX_NETWORK_ADDRESS_CACHE  (5)
+    #define MAX_NETWORK_ADDRESS_CACHE  (100)
 #endif
 
 static NetworkAddressCache networkAddressCache[MAX_NETWORK_ADDRESS_CACHE] = {{0}};
